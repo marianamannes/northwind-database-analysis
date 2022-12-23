@@ -5,7 +5,7 @@ The Northwind database is a sample database used by Microsoft that contains the 
 The Northwind sample database includes 14 tables, which are represented by the relationshop diagram below.
 
 <p align="center">
-<img src="https://docs.yugabyte.com/images/sample-data/northwind/northwind-er-diagram.png" width=60% height=60%>
+<img src="https://docs.yugabyte.com/images/sample-data/northwind/northwind-er-diagram.png" width=80% height=80%>
 
 In this project, my goal was to perform an analysis of the company Northwind Traders through SQL Server. I chose to analyze some relevant topics of the specific themes below:
 
