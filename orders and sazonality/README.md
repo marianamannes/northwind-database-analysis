@@ -141,7 +141,8 @@ WITH cte_table AS(
 SELECT Month(o.OrderDate) AS "Month",
 	c.CategoryName AS "Category",
 	ROUND(SUM(d.UnitPrice * d.Quantity * (1 - d.Discount)),2) AS "Revenue",
-	RANK() over (Partition BY Month(o.OrderDate) ORDER BY ROUND(SUM(d.UnitPrice * d.Quantity * (1 - d.Discount)),2) DESC) AS "Rank"
+	RANK() OVER (Partition BY Month(o.OrderDate) 
+		ORDER BY ROUND(SUM(d.UnitPrice * d.Quantity * (1 - d.Discount)),2) DESC) AS "Rank"
 FROM dbo.Orders o
 INNER JOIN dbo.OrderDetails d
 ON o.OrderID = d.OrderID
@@ -179,7 +180,8 @@ WITH cte_table AS(
 SELECT Month(o.OrderDate) AS "Month",
 	p.ProductName AS "Product",
 	ROUND(SUM(d.UnitPrice * d.Quantity * (1 - d.Discount)),2) AS "Revenue",
-	RANK() over (Partition BY Month(o.OrderDate) ORDER BY ROUND(SUM(d.UnitPrice * d.Quantity * (1 - d.Discount)),2) DESC) AS "Rank"
+	RANK() OVER (Partition BY Month(o.OrderDate) 
+		ORDER BY ROUND(SUM(d.UnitPrice * d.Quantity * (1 - d.Discount)),2) DESC) AS "Rank"
 FROM dbo.Orders o
 INNER JOIN dbo.OrderDetails d
 ON o.OrderID = d.OrderID
@@ -215,7 +217,8 @@ WITH cte_table AS(
 SELECT Month(o.OrderDate) AS "Month",
 	o.ShipCountry AS "Country",
 	ROUND(SUM(d.UnitPrice * d.Quantity * (1 - d.Discount)),2) AS "Revenue",
-	RANK() over (Partition BY Month(o.OrderDate) ORDER BY ROUND(SUM(d.UnitPrice * d.Quantity * (1 - d.Discount)),2) DESC) AS "Rank"
+	RANK() OVER (Partition BY Month(o.OrderDate) 
+		ORDER BY ROUND(SUM(d.UnitPrice * d.Quantity * (1 - d.Discount)),2) DESC) AS "Rank"
 FROM dbo.Orders o
 INNER JOIN dbo.OrderDetails d
 ON o.OrderID = d.OrderID
