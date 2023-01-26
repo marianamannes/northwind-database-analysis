@@ -1,4 +1,4 @@
-# Northwind Database Analysis
+# 🛍️ Northwind Database Analysis
 
 The Northwind database is a sample database used by Microsoft that contains the sales data for Northwind Traders, a fictitious specialty foods export/import company. The database can be downloaded [here](https://github.com/microsoft/sql-server-samples/tree/master/samples/databases/northwind-pubs).
 
